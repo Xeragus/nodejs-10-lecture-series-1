@@ -1,0 +1,18 @@
+CLEAN CODE, DESIGN PATTERNS, ....
+DRY - Don't Repeat Yourself
+koga rutite se povtoruvaat, napravi prefix
+Single Responsibility
+1 funkcija pravi 1 rabota, 1 klasa menadzira 1 resurs, 1 routes file ima ruti za 1 resurs
+Function, Variable, File, Class Naming
+Don't be afraid of long names, use descriptive names
+
+Arhitektura za pravenje na web aplikacii
+MVC - Model View Controller
+
+query parameters
+localhost:3000/users?name=Boban&password=Sugareski
+route parameters
+facebook.com/boban.sugareski
+
+Refactoring / refaktoriranje
+promena na kodot bez da se smenat negovite funkcionalnosti
