@@ -24,5 +24,20 @@ module.exports = {
     }
 
     res.redirect('/restaurants')
-  }
+  },
+  postUpdate: async (req, res) => {
+    try {
+      req.body.has_kitchen = req.body.has_kitchen == 'on' ? true : false
+      
+      await Restaurant.updateOne({ _id: req.params.id }, req.body)
+    } catch (err) {
+      // res.render('restaurants/my', {
+      //   ...req.body,
+      //   error: true,
+      //   message: err.message
+      // })
+    }
+
+    res.redirect('/restaurants')
+  },
 }
