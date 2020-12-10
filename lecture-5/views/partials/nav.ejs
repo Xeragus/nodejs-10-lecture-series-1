@@ -11,22 +11,24 @@
         </button>
       </div>
     </div>
-    <div class="col-sm-2 pr-0">
-      <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
-        <div>
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Boban
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/requests">Requests</a>
-              <a class="dropdown-item" href="/restaurants">My Restaurants</a>
-              <a class="dropdown-item" href="/settings">Settings</a>
-              <a class="dropdown-item" href="#">Sign Out</a>
+    <% if (typeof user != 'undefined') { %>
+      <div class="col-sm-2 pr-0">
+        <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
+          <div>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= typeof user != 'undefined' ? user.first_name : '' %>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/requests">Requests</a>
+                <a class="dropdown-item" href="/restaurants">My Restaurants</a>
+                <a class="dropdown-item" href="/settings">Settings</a>
+                <a class="dropdown-item" href="/users/signout">Sign Out</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% } %>
   </div>
 </nav>

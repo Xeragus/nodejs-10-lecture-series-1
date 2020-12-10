@@ -1,0 +1,15 @@
+<% if (typeof error != 'undefined' && error != '') { %>
+  <div class="alert alert-danger" role="alert">
+    <%= error %>
+  </div>
+<% } %>
+<% if(success_message != ''){ %>
+   <div class="alert alert-success" role="alert">
+     <%= success_message %>
+   </div>
+<% } %>
+<% if(error_message != ''){ %>
+   <div class="alert alert-danger" role="alert">
+     <%= error_message %>
+   </div>
+<% } %>

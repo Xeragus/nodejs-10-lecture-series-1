@@ -1,5 +1,3 @@
-<%- include('../partials/head'); %>
-<%- include('../partials/nav'); %>     
 <form action="/restaurants" method="POST" style="max-width: 600px; margin: 0 auto;" class="mt-5">
   <% if (typeof error != 'undefined' && error) { %>
     <div class="alert alert-danger" role="alert">
@@ -70,4 +68,3 @@
     <button type="submit" class="btn btn-success float-right">Create</button>
   </div>
 </form>
-<%- include('../partials/footer'); %>  
