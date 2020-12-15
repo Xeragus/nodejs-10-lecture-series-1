@@ -4,16 +4,21 @@ module.exports = {
   getCreate: (req, res) => {
     res.render('restaurants/create')
   },
-  getMyRestaurants: async (req, res) => {
+  getAll: async (req, res) => {
     const restaurants = await Restaurant.find()
+
+    res.render('index', { restaurants: restaurants })
+  },
+  getMyRestaurants: async (req, res) => {
+    const restaurants = await Restaurant.find({ user: req.user })
 
     res.render('restaurants/my', { restaurants: restaurants })
   },
   postCreate: async (req, res) => {
     try {
-      const restaurant = new Restaurant(req.body)
-      restaurant.has_kitchen = req.body.has_kitchen == 'on' ? true : false
-
+      const restaurant = new Restaurant({ ...req.body, user: req.user })
+      console.log(restaurant)
+      restaurant.has_kitchen = req.body.has_kitchen == '' ? true : false
       await restaurant.save()
     } catch (err) {
       res.render('restaurants/create', {

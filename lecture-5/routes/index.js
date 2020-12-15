@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const RestaurantsController = require('../controllers/restaurants')
 
-router.get('/', (req, res, next) => {
-  console.log('hehe')
-  res.render('index', {});
-});
+router.get('/', RestaurantsController.getAll);
 
 module.exports = router;

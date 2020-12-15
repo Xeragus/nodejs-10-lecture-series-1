@@ -35,7 +35,11 @@ const schema = mongoose.Schema({
     type: Boolean,
     required: true,
     default: false
-  }
+  },
+  user: {
+    type: mongoose.Types.ObjectId,
+    ref: 'User'
+  },
 })
 
 module.exports = mongoose.model('Restaurant', schema)

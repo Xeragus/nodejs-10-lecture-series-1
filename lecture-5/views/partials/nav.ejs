@@ -20,7 +20,7 @@
                 <%= typeof user != 'undefined' ? user.first_name : '' %>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="/requests">Requests</a>
+                <a class="dropdown-item" href="/reservations">Reservations</a>
                 <a class="dropdown-item" href="/restaurants">My Restaurants</a>
                 <a class="dropdown-item" href="/settings">Settings</a>
                 <a class="dropdown-item" href="/users/signout">Sign Out</a>
@@ -29,6 +29,8 @@
           </div>
         </div>
       </div>
+    <% } else { %>
+      <a href="/users/login">Login</a>
     <% } %>
   </div>
 </nav>

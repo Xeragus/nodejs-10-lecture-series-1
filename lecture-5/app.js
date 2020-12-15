@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const restaurantsRouter = require('./routes/restaurants')
+const reservationsRouter = require('./routes/reservations')
 
 const session = require('express-session')
 const passport = require('passport')
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/restaurants', restaurantsRouter)
+app.use('/reservations', reservationsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
